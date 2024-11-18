@@ -4,38 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Simple E-Commerce Site</title>
+    <title>My Shop</title>
 </head>
-<meta charset="utf-8">
-<title>ai.website</title>
-
 <body>
     <header>
         <h1>My Shop</h1>
         <div id="cart">
             <span>Cart: </span><span id="cart-count">0</span>
+            <button id="view-cart">View Cart</button>
         </div>
     </header>
     <main>
-        <div class="product" data-name="Product 1" data-price="10">
-            <h2>Product 1</h2>
-            <p>Price: $10</p>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <div class="product" data-name="Product 2" data-price="15">
-            <h2>Product 2</h2>
-            <p>Price: $15</p>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <div class="product" data-name="Product 3" data-price="20">
-            <h2>Product 3</h2>
-            <p>Price: $20</p>
-            <button class="add-to-cart">Add to Cart</button>
+        <div class="product-grid">
+            <div class="product" data-name="Product 1" data-price="10" data-description="This is Product 1.">
+                <img src="images/buffpup.PNG" alt="Product 1">
+                <h2>Product 1</h2>
+                <p>Price: $10</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+            <div class="product" data-name="Product 2" data-price="15" data-description="This is Product 2.">
+                <img src="images/buffpup.PNG" alt="Product 2">
+                <h2>Product 2</h2>
+                <p>Price: $15</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+            <div class="product" data-name="Product 3" data-price="20" data-description="This is Product 3.">
+                <img src="images/buffpup.PNG" alt="Product 3">
+                <h2>Product 3</h2>
+                <p>Price: $20</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+            <!-- Additional products can be added here -->
         </div>
     </main>
-    <footer>
+
+    <!-- Product Details Modal -->
+    <div id="details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-product-image" alt="">
+            <h2 id="modal-product-name"></h2>
+            <p id="modal-product-description"></p>
+            <p id="modal-product-price"></p>
+            <button id="add-to-cart-from-modal">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p id="total-price">Total: $0</p>
+            <button id="checkout">Checkout</button>
+        </div>
+    </div>
+	
+	<!-- Cart Modal -->
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p id="total-price">Total: $0</p>
         <button id="checkout">Checkout</button>
-    </footer>
+    </div>
+</div>
+
+
     <script src="script.js"></script>
 </body>
 </html>
